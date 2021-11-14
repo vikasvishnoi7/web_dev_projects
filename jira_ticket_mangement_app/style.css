@@ -1,0 +1,275 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    /* border:2px solid red; */
+    margin: 0px;
+}
+/* ********header********* */
+.header-container{
+    /* border: 2px solid green; */
+    background-color: #333;
+    height: 4.5rem;
+    display: flex;
+    padding-left: 7.5rem;
+    align-items: center;
+
+}
+
+.header-container>*{
+    background-color: #454444;
+    height: 65%;
+    border-radius: 6px;
+}
+
+.color-group_container >div:hover{
+    background-color: #1e272e;
+}
+/* *************color group************* */
+.color-group_container{
+    width: 25%;
+    margin-right: 7rem;
+    align-items: center;
+    display: flex;
+    /* justify-content: space-around; */
+}
+
+.color{
+    height: 43%;
+    width: 44%;
+    border-radius: 5px;
+}
+
+.colorBox{
+    height: 100%;
+    width: 50%;
+    /* background-color: darkorange; */
+    /* border: 1px solid yellow; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.pink{
+    background-color: lightpink;
+}
+.blue{
+    background-color: lightblue;
+}
+.green{
+    background-color: lightgreen;
+}
+.black{
+    background-color: black;
+}
+
+/* *************cross group************* */
+.add-cross_container,.lock-unlock_container{
+    width: 10%;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: space-around; */
+    margin-right: 1rem;
+    
+}
+.add-cross_container>*,.lock-unlock_container>*{
+    /* background-color: red; */
+    height: 100%;
+    width: 50%;
+}
+/* 
+.puls-container,.multiply-container{
+    height: 100%;
+    width: 50%;
+} */
+.lock-unlock_container >div:hover{
+    background-color: #1e272e;
+}
+
+.add-cross_container >div:hover{
+    background-color: #1e272e;
+}
+
+.puls-container,.multiply-container,.lock-container,.unlock-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.active{
+  background-color: rgb(62, 56, 56);
+}
+.tool_icons{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* *************task input************* */
+
+.task_input{
+    color: white;
+}
+
+/* *******main********** */
+.main-container{
+    /* border: 2px solid black; */
+    height: calc(100vh - 4rem);   
+    background-color: #f8f6eb;
+    padding: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    overflow-y: scroll;
+}
+
+.task_container{
+    /* border: 1px solid black; */
+    background-color: white;
+    height: 8rem;
+    width: 14rem;
+}
+.task_header{
+    height: 0.5rem;
+    /* background-color: black; */
+}
+.task_main-container{
+    padding: 0.5rem;
+    height: 6.5rem;
+    /* background-color: #f1f2f6; */
+}
+.task_id{
+    color: rgb(187, 184, 184);
+    margin: 0.2rem;
+    margin-left: 0px;
+}
+.text{
+   height: 80%;
+   overflow-y: scroll;
+}
+.text::-webkit-scrollbar {
+   display: none;
+ }  
+
+/* *************************modal*********************** */
+
+.modal{
+    /* height: 19rem;
+    width: 35rem;
+    background-color: white;
+    position: fixed;
+    top: calc(50% - (19/2)rem);
+    left: calc(50% - (35/2)rem);
+    display: flex; */
+    height: 44vh;
+    width: 40vw;
+    background-color: white;
+    position: fixed;
+    top: calc( (100vh - 44vh ) / 2 );
+    left: calc( (100vw - 40vw) / 2 );
+}
+
+.input_container{
+    height: 100%;
+    width: 65%;
+    border: 1px solid black;
+    padding: 2rem;
+}
+
+.input_container_text{
+   outline:none;
+   height:100%;
+   width:100%;
+   border:none;
+   font-size: 1.5rem;
+   font-family: sans-serif;
+   resize: none; 
+} 
+
+.color_container{
+    height: 100%;
+    width: 35%;
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1.5rem;
+}
+
+.color_picker{
+    height: 2.5rem;
+    width: 5rem;
+}
+
+.selected{
+    border: 0.2rem solid white;
+}
+
+
+/* Laptop */
+@media only screen and (min-width: 769px) and (max-width: 1025px) {
+        /* .main-container { background-color: rgb(200, 255, 0);}  */
+        .modal {height: 49vh; width: 48vw; background-color: white;position: fixed;top: calc( (100vh - 49vh ) / 2 );
+    left: calc( (100vw - 48vw) / 2 );}
+}
+
+/* Tablet */
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+        /* .main-container { background-color: aqua;}  */
+        .color-group_container{width: 42%;margin-right: 10%;}
+        .add-cross_container, .lock-unlock_container {width: 16%;}
+        .header-container {width: 100vw;}
+        .header-container {padding-left: 10%;}
+        .modal {height: 45vh; width: 56vw; background-color: white;position: fixed;top: calc( (100vh - 45vh ) / 2 );
+    left: calc( (100vw - 56vw) / 2 );}
+        .color_container{padding: 0.5rem;}
+}
+
+/* Mobile L */
+@media only screen and (min-width: 376px) and (max-width: 426px){
+    /* .main-container { background-color: red;}  */
+    .header-container {padding-left: 10%;height: 3.5rem;}
+    .color-group_container {width: 39%;margin-right: 10%;}
+    .add-cross_container, .lock-unlock_container {width: 20%; margin-right: 4%;}
+    .modal {
+    height: 44vh;
+    width: 82vw;
+    background-color: white;
+    position: fixed;
+    top: calc( (100vh - 44vh ) / 2 );
+    left: calc( (100vw - 82vw) / 2 );}
+    .color_container{padding: 0.5rem;}
+}
+
+/* Mobile M */
+@media only screen and (min-width:321px) and (max-width:376px){
+    /* .main-container{ background-color: green;} */
+    .header-container {padding-left: 10%;height: 3.5rem;}
+    .color-group_container{width: 39%;margin-right: 10%;}
+    .modal {
+    height: 44vh;
+    width: 82vw;
+    background-color: white;
+    position: fixed;
+    top: calc( (100vh - 44vh ) / 2 );
+    left: calc( (100vw - 81vw) / 2 );}
+    .color_container{padding: 0.5rem;}
+}
+
+/* Mobile S */
+@media only screen and (max-width:321px){
+    /* .main-container{ background-color: rgb(34, 0, 128);} */
+    .header-container {padding-left: 10%;height: 3.5rem;}
+    .color-group_container{width: 39%;margin-right: 10%;}
+    .add-cross_container, .lock-unlock_container {width: 20%; margin-right: 4%;}
+    .modal {
+    height: 40vh;
+    width: 81vw;
+    background-color: white;
+    position: fixed;
+    top: calc( (100vh - 40vh ) / 2 );
+    left: calc( (100vw - 81vw) / 2 );}
+    .color_container{padding: 0.5rem;}
+    .color_picker {height: 2rem;width: 4rem;}
+}
