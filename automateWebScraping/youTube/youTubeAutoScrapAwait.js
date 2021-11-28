@@ -95,19 +95,23 @@ let page;
     let timeList = await page.$$("span[id='text']");
     console.log(timeList.length);
 
+    // create pdf
+    let pdfDoc = new pdf;
+    pdfDoc.pipe(fs.createWriteStream("play.pdf"));
+
     // videosArr function -> contains -> time , video name
     let videosArr = [];
     for (let i = 0; i < timeList.length; i++) {
         let timeNTitleObj = await page.evaluate(getTimeAndTitle, timeList[i], videoNameElementList[i]);
         videosArr.push(timeNTitleObj);
+
+        pdfDoc.font('Courier').fontSize(14).fillColor('black').text(JSON.stringify(timeNTitleObj), { bold: true, });
+        pdfDoc.moveDown(0.5);
     }
     // print alldata -> table format
     console.table(videosArr);
 
-    // create pdf
-    let pdfDoc = new pdf;
-    pdfDoc.pipe(fs.createWriteStream("play.pdf"));
-    pdfDoc.text(JSON.stringify(videosArr));
+    // pdf
     pdfDoc.end();
 
 })();
